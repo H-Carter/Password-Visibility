@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Password Visibility</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        html {
+            background: rgb(229, 39, 255);
+            background: linear-gradient(150deg, rgba(229, 39, 255, 1) 0%, rgba(119, 242, 240, 1) 70%);
+            height: 100%;
+        }
+        
+        body {
+            margin: 0 auto;
+            max-width: 40em;
+            width: 80vw;
+            font-family: sans-serif;
+        }
+        
+        section {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0px;
+            box-shadow: 10px 10px 2px 2px rgba(0, 0, 0, .1);
+        }
+        
+        label {
+            display: block;
+            width: 100%;
+        }
+        
+        input {
+            margin-bottom: 1em;
+        }
+        
+        [type="checkbox"] {
+            margin-bottom: 0;
+            margin-right: 0.25em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h1>Password Visibility</h1>
+        <p>Enter your username and password to login.</p>
+    </section>
+
+    <section>
+        <form>
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+
+            <div>
+                <label for="show-password">
+                        <input type="checkbox" name="show-passwords" id="show-password">
+                        Show password
+                    </label>
+            </div>
+
+            <p>
+                <button type="submit">Log In</button>
+            </p>
+        </form>
+    </section>
+
+    <script>
+        // Variables
+        let showPasswordCheckbox = document.querySelector('#show-password');
+        let userPassword = document.querySelector('#password');
+
+        // Event Listener
+        showPasswordCheckbox.addEventListener('click', function() {
+            if (showPasswordCheckbox.checked) {
+                userPassword.type = "text";
+            } else {
+                userPassword.type = "password";
+            }
+        });
+    </script>
+</body>
+
+</html>
